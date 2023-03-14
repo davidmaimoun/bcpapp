@@ -66,8 +66,8 @@ def round_value(input_value):
         a = float(round(input_value, 8))
     return a
 
-URL_KLINES = "https://api.binance.com/api/v3/klines"
-URL_TICKER = "https://api.binance.com/api/v3/ticker/24hr"
+URL_KLINES = "https://data.binance.com/api/v3/klines"
+URL_TICKER = "https://data.binance.com/api/v3/ticker/24hr"
 
 df = pd.DataFrame()
 try:
