@@ -80,12 +80,6 @@ st.sidebar.markdown('''
     <h1>BCP App</h1>
 ''',unsafe_allow_html=True)
 
-currencies = st.sidebar.multiselect(
-    f"Currencies ({len(df)})",
-    df.symbol, 
-    ['BTCUSDT', 'ETHBTC', 'SHIBBUSD', 'DOGEBUSD', 'BNBBTC']
-)
-
 
 # METRICS #############################
 st.markdown('''
@@ -96,6 +90,12 @@ st.markdown('''
 
 ''',unsafe_allow_html=True)
 if not df.empty:
+    currencies = st.sidebar.multiselect(
+        f"Currencies ({len(df)})",
+        df.symbol, 
+        ['BTCUSDT', 'ETHBTC', 'SHIBBUSD', 'DOGEBUSD', 'BNBBTC']
+    )
+
     col1, col2, col3 = st.columns(3)
     id = 1
     for currency in currencies:
