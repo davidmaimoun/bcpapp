@@ -72,8 +72,9 @@ URL_TICKER = "https://api.binance.com/api/v3/ticker/24hr"
 df = pd.DataFrame()
 try:
     df = pd.read_json(URL_TICKER)
-except:
-    st.warning("An error occured when fetching the data, sorry")
+except Exception as e: 
+    print(e)
+    st.warning("An error occured when fetching the data, sorry", e)
 
 # SIDEBAR ###############################
 st.sidebar.markdown('''
