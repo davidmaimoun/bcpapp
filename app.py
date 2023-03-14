@@ -73,7 +73,9 @@ df = pd.DataFrame()
 try:
     df = pd.read_json(URL_TICKER)
 except Exception as e: 
-    st.warning("An error occured when fetching the data, sorry", e)
+    st.warning(e)
+#     st.warning("An error occured when fetching the data, sorry", e)
+
 
 # SIDEBAR ###############################
 st.sidebar.markdown('''
